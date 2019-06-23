@@ -39,16 +39,21 @@ namespace X_Ray_Visualizer_WPF
             int length = DimensionY(dicom);
             byte[] stream = dicom.PixelStream.ToArray();
 
+            Console.WriteLine("-=-" + Environment.NewLine + "Beginning read from DICOM file" + Environment.NewLine + "Length: " + length + Environment.NewLine + "Width: " + width + "\nContaining a total of " + stream.Length + "\n-=-");
+            
+
             Bitmap bmp = new Bitmap(width, length);
 
             int pixel = 0;
-
-            for(int x = 0; x > width; x++)
+            // 0 > 256
+            for(int x = 0; x < width; x++)
             {
-                for (int y = 0; y > length; y++)
+                Console.WriteLine("x " + x);
+                for (int y = 0; y < length; y++)
                 {
                     Console.WriteLine(stream[pixel]);
-                    bmp.SetPixel(x, y, new System.Drawing.Color());
+                    System.Drawing.Color color = System.Drawing.Color.FromArgb(stream[pixel], stream[pixel], stream[pixel]);
+                    bmp.SetPixel(x, y, color);
                 }
             }
             return bmp;
