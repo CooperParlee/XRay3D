@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:X_Ray_Visualizer_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="X-Ray Visualizer" Height="735.306" Width="1114.488">
     <Grid>
-        
+        <Button Content="Open DICOM File (.dcm)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="149" Height="26" Click="Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="512" Margin="10,72,0,0" VerticalAlignment="Top" Width="512"/>
+        <Image x:Name="imageOriginalBox" HorizontalAlignment="Left" Height="512" Margin="10,72,0,0" VerticalAlignment="Top" Width="512" Source="noDisplay.jpg"/>
+        <Image x:Name="imageProcessedBox" HorizontalAlignment="Left" Height="512" Margin="584,72,0,0" VerticalAlignment="Top" Width="512" Source="noDisplay.jpg"/>
+        <Label Content="Original Image" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,46,0,0" Width="149"/>
+        <Label Content="Processed Image" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="584,46,0,0" Width="149"/>
+
     </Grid>
 </Window>
