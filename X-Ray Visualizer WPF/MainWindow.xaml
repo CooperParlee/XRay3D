@@ -13,6 +13,8 @@
         <Image x:Name="imageProcessedBox" HorizontalAlignment="Left" Height="512" Margin="584,72,0,0" VerticalAlignment="Top" Width="512" Source="noDisplay.jpg"/>
         <Label Content="Original Image" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,46,0,0" Width="149"/>
         <Label Content="Processed Image" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="584,46,0,0" Width="149"/>
+        <ProgressBar HorizontalAlignment="Left" Height="19" Margin="10,497,0,0" VerticalAlignment="Top" Width="900" Value="-1"/>
+        <Label Content="Task: Idle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="915,494,0,0"/>
 
     </Grid>
 </Window>

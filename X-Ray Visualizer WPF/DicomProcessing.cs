@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,10 @@ namespace X_Ray_Visualizer_WPF
                         Console.WriteLine("Reading from " + uri);
                         dcm[Array.IndexOf(dcm, null)] = DICOMObject.Read(uri);
                     }
-                    display.PreviewImage(DisplayManagement.DICOMToBmp(dcm[0]));
+                    Console.WriteLine("Not held 1");
+                    Bitmap bitmap = DisplayManagement.DICOMToBmp(dcm[0]);
+                    Console.WriteLine("Not held 2");
+                    display.PreviewImage(bitmap);
                     Console.Read();
                     return dcm;
                 }
