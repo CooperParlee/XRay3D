@@ -1,24 +1,24 @@
-﻿using System;
+﻿using Dicom;
+using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EvilDICOM.Core;
-using Microsoft.Win32;
+using System.Windows.Media.Imaging;
 
 namespace X_Ray_Visualizer_WPF
 {
-    class DICOMProcessing
+    class DicomManager
     {
-        private DisplayManagement display;
+        DisplayManagement display;
 
-        public DICOMProcessing(DisplayManagement display)
+        public DicomManager(DisplayManagement display)
         {
             this.display = display;
         }
- 
-        public DICOMObject[] FindDicomFile()
+        public DicomFile[] OpenDicomSearch()
         {
             OpenFileDialog openFile = new OpenFileDialog();
             try
@@ -31,15 +31,14 @@ namespace X_Ray_Visualizer_WPF
 
                 if (openFile.ShowDialog() == true)
                 {
-                    DICOMObject[] dcm = new DICOMObject[openFile.FileNames.Length];
-                    
+                    DicomFile[] dcm = new DicomFile[openFile.FileNames.Length];
+
                     foreach (string uri in openFile.FileNames)
                     {
                         Console.WriteLine("Reading from " + uri);
-                        dcm[Array.IndexOf(dcm, null)] = DICOMObject.Read(uri);
+                        dcm[Array.IndexOf(dcm, null)] = DicomFile.Open(uri);
                     }
-                    Console.WriteLine("Not held 1");
-                    Bitmap bitmap = DisplayManagement.DICOMToBmp(dcm[0]);
+                    WriteableBitmap bitmap = DisplayManagement.DICOMToBmp(dcm[0]);
                     Console.WriteLine("Not held 2");
                     display.PreviewImage(bitmap);
                     Console.Read();

@@ -20,20 +20,20 @@ namespace X_Ray_Visualizer_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        DICOMProcessing dicomProcessor;
+        DicomManager dcmManager;
         DisplayManagement display;
 
         public MainWindow()
         {
             InitializeComponent();
             this.display = new DisplayManagement(imageOriginalBox, imageProcessedBox);
-            this.dicomProcessor = new DICOMProcessing(this.display);
-            
+            this.dcmManager = new DicomManager(display);
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            dicomProcessor.FindDicomFile();
+            dcmManager.OpenDicomSearch();
         }
     }
 }
