@@ -50,7 +50,7 @@ namespace X_Ray_Visualizer_WPF
         {
             //BitmapSource ims = Imaging.CreateBitmapSourceFromHBitmap(image.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
             BitmapSource ims = ConvertWriteableBitmapToBitmapImage(image);
-            using (var fileStream = new FileStream("C:/Users/Thinkchicken/Desktop/bitmap.png", FileMode.Create))
+            using (var fileStream = new FileStream("C:/Users/cparl/OneDrive/Desktop/bitmap.png", FileMode.Create))
             {
                 BitmapEncoder encoder = new PngBitmapEncoder();
                 encoder.Frames.Add(BitmapFrame.Create(ims));
