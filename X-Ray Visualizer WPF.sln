@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X-Ray Visualizer WPF", "X-Ray Visualizer WPF\X-Ray Visualizer WPF.csproj", "{3E3163E0-FACB-4966-A61C-5B7A4B5541A0}"
 EndProject

@@ -58,6 +58,7 @@ namespace X_Ray_Visualizer_WPF
                 Console.WriteLine("Saving file");
             }
             //ims.
+            OpenCVTracer.CVTrace("C:/Users/cparl/OneDrive/Desktop/bitmap.png");
             original.Source = ims;
         }
 
