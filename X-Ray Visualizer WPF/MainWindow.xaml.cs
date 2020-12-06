@@ -35,5 +35,15 @@ namespace X_Ray_Visualizer_WPF
         {
             dcmManager.OpenDicomSearch();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
     }
 }
